@@ -12,7 +12,7 @@ import {
 } from 'react-bootstrap';
 import '../src/app.css'
 import Home from './components/Home';
-import Navbar1 from './components/Navbar1';
+import AppNavbar from './components/Nav';
 import Footer from './components/Footer';
 import BookCard from './components/BookCard';
 import Cart from './components/Cart';
@@ -32,7 +32,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar1 />
+        <AppNavbar />
         <Home />
         <main>
           <h2>Featured Books</h2>
