@@ -39,13 +39,13 @@ const client = new ApolloClient({
 });
 
 
-const MyComponent = () => {
-  const href = useHref('/new-route');
+// const MyComponent = () => {
+//   const href = useHref('/new-route');
 
-  return (
-    <a href={href}>Click here to go to a new route</a>
-  );
-};
+//   return (
+//     <a href={href}>Click here to go to a new route</a>
+//   );
+// };
 
 function App() {
   return (
