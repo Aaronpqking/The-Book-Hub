@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 //Import ApolloProvider hook and ApolloClient
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider, useQuery, useMutation } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-
+import { GET_BOOKS, ADD_BOOK } from './utils/queries';
 import {
   Container,
   CardColumns,
@@ -24,6 +24,40 @@ import Cart from './components/Cart';
 import CheckoutForm from './components/CheckoutForm';
 import OrderSummary from './components/OrderSummary';
 import ConfirmationModal from './components/ConfirmationModal';
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
+
+const BooksList = () => {
+  const { loading, error, data } =
+    useQuery(GET_BOOKS);
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+  return (
+    <ul>
+      {data.books.map(book => (
+        <li key={book.id}>
+          {book.title} by {book.author}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+const AddBookForm = () => {
+  const [addBook, { data }] = useMutation(ADD_BOOK);
+
+  return (
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        addBook({ variables: { title: 'New Book', author: 'John Doe', price: 19.99 } });
+      }}
+    >
+      <button type="submit">Add Book</button>
+    </form>
+  );
+};
 
 const client = new ApolloClient({
   request: operation => {

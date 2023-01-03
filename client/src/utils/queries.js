@@ -1,22 +1,35 @@
-// import { gql } from '@apollo/client';
+import gql from 'graphql-tag';
 
-// export const QUERY_TECH = gql`
-//   query tech {
-//     tech {
-//       _id
-//       name
-//     }
-//   }
-// `;
+export const GET_BOOKS = gql`
+  query GetBooks {
+    books {
+      title
+      author
+      price
+      imageUrl
+    }
+  }
+`;
 
-// export const QUERY_MATCHUPS = gql`
-//   query matchups($_id: String) {
-//     matchups(_id: $_id) {
-//       _id
-//       tech1
-//       tech2
-//       tech1_votes
-//       tech2_votes
-//     }
-//   }
-// `;
+export const GET_AUTHORS = gql`
+  query GetAuthors {
+    authors {
+      name
+      id
+      books {
+        title
+      }
+    }
+  }
+`;
+
+export const ADD_BOOK = gql`
+  mutation AddBook($title: String!, $author: String!, $price: Float!, $imageUrl: String) {
+    addBook(title: $title, author: $author, price: $price, imageUrl: $imageUrl) {
+      title
+      author
+      price
+      imageUrl
+    }
+  }
+`;
