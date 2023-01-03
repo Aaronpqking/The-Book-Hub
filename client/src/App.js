@@ -2,6 +2,11 @@ import React from 'react';
 import { useState, useEffect, useHref } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
+//Import ApolloProvider hook and ApolloClient
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
+
 import {
   Container,
   CardColumns,
@@ -30,6 +35,7 @@ const MyComponent = () => {
 
 function App() {
   return (
+    <ApolloProvider client={client}>
     <Router>
       <div className="App">
         <AppNavbar />
@@ -74,6 +80,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </ApolloProvider>
   );
 }
 
