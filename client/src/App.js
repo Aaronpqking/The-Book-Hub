@@ -25,6 +25,20 @@ import CheckoutForm from './components/CheckoutForm';
 import OrderSummary from './components/OrderSummary';
 import ConfirmationModal from './components/ConfirmationModal';
 
+const client = new ApolloClient({
+  request: operation => {
+    const token = localStorage.getItem('id_token');
+
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    })
+  },
+  uri: '/graphql'
+});
+
+
 const MyComponent = () => {
   const href = useHref('/new-route');
 
