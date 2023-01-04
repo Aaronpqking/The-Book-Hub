@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Import ApolloProvider hook and ApolloClient
 import { ApolloProvider, useQuery, useMutation } from '@apollo/react-hooks';
-import ApolloClient from 'apollo-boost';
+import { ApolloClient, InMemoryCache, ApoloProvider, createHttpLink } from '@apollo/client';
 import { GET_BOOKS, ADD_BOOK } from './utils/queries';
 import {
   Container,

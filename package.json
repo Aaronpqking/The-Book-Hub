@@ -20,6 +20,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
-    "decode": "^0.3.0"
+    "decode": "^0.3.0",
+    "passport": "^0.6.0"
   }
 }

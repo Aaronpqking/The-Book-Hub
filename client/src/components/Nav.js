@@ -1,7 +1,7 @@
 // import Container from 'react-bootstrap/Container';
 // import Nav from 'react-bootstrap/Nav';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
-// import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
@@ -21,12 +21,23 @@ const AppNavbar = () => {
           <Navbar.Brand as={Link} to='/'>
             Welcome!
           </Navbar.Brand>
+          <Form className="d-flex"><span>
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+            </span>
+          </Form>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               <Nav.Link as={Link} to='/'>
                 Search For Books
               </Nav.Link>
+              
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
