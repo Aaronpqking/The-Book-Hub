@@ -1,5 +1,5 @@
 {
-  "name": "programming-thoughts",
+  "name": "The-Book-Hub",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -20,7 +20,9 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "decode": "^0.3.0",
+    "mongodb": "^4.13.0",
     "passport": "^0.6.0",
     "react-router-dom": "^6.6.1"
   }
