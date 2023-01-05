@@ -1,39 +1,42 @@
-const mongoose = require('mongoose');
-
-// Import the User model
+const bcrypt = require('bcrypt');
 const User = require('../models/user');
 
-// Seed data
 const users = [
   {
-    name: 'John Doe',
-    email: 'johndoe@gmail.com',
-    password: 'password123',
+    username: 'JaneDoe',
+    email: 'jane.doe@example.com',
+    password: bcrypt.hashSync('password', 10),
   },
   {
-    name: 'Jane Smith',
-    email: 'janesmith@gmail.com',
-    password: 'password456',
+    username: 'JohnDoe',
+    email: 'john.doe@example.com',
+    password: bcrypt.hashSync('password', 10),
   },
   {
-    name: 'Bob Johnson',
-    email: 'bobjohnson@gmail.com',
-    password: 'password789',
+    username: 'BobSmith',
+    email: 'bob.smith@example.com',
+    password: bcrypt.hashSync('password', 10),
+  },
+  {
+    username: 'AliceJones',
+    email: 'alice.jones@example.com',
+    password: bcrypt.hashSync('password', 10),
+  },
+  {
+    username: 'MikeWilson',
+    email: 'mike.wilson@example.com',
+    password: bcrypt.hashSync('password', 10),
   },
 ];
 
-// Function to seed the user data
-const createUsers = async () => {
+const seedUsers = async () => {
   try {
-    // Use the create method of the User model to insert the user data into the database
-    await User.create(users);
-    console.log('Data seeded!');
-    process.exit();
+    await User.deleteMany();
+    await User.insertMany(users);
+    console.log('Seeded users successfully.');
   } catch (error) {
-    console.log('Error seeding data:', error);
-    process.exit();
+    console.error(error);
   }
 };
 
-// Call the createUsers function to seed the data
-createUsers();
+module.exports = seedUsers;

@@ -1,40 +1,41 @@
-const mongoose = require('mongoose');
 const Book = require('../models/book');
 
-// Seed data
-const booksData = [
+const books = [
+  {
+    title: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    publisher: 'T. Egerton',
+  },
+  {
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    publisher: 'Charles Scribner\'s Sons',
+  },
+  {
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
+    publisher: 'J. B. Lippincott & Co.',
+  },
   {
     title: 'The Alchemist',
     author: 'Paulo Coelho',
-    category: 'Fiction',
-    quantity: 2,
-    price: 12.99,
+    publisher: 'HarperCollins',
   },
   {
     title: 'The Catcher in the Rye',
-    author: 'J.D. Salinger',
-    category: 'Fiction',
-    quantity: 1,
-    price: 8.99,
-  },
-  {
-    title: 'The Art of Computer Programming',
-    author: 'Donald Knuth',
-    category: 'Computer Science',
-    quantity: 5,
-    price: 44.99,
+    author: 'J. D. Salinger',
+    publisher: 'Little, Brown and Company',
   },
 ];
 
-const createBooks = async () => {
+const seedBooks = async () => {
   try {
-    await Book.create(booksData);
-    console.log('Books data seeded!');
-    process.exit();
+    await Book.deleteMany();
+    await Book.insertMany(books);
+    console.log('Seeded books successfully.');
   } catch (error) {
-    console.log('Error seeding books data:', error);
-    process.exit();
+    console.error(error);
   }
 };
 
-createBooks();
+module.exports = seedBooks;

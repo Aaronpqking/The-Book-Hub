@@ -2,31 +2,27 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type Book {
-    _id: ID!
+    id: ID!
     title: String!
     author: String!
-    description: String!
-    coverImage: String!
-    price: Float!
+    publisher: String
   }
 
   input BookInput {
     title: String!
     author: String!
-    description: String!
-    coverImage: String!
-    price: Float!
+    publisher: String
   }
 
-  extend type Query {
+  type Query {
+    book(id: ID!): Book
     books: [Book]
-    book(_id: ID!): Book
   }
 
-  extend type Mutation {
-    createBook(book: BookInput): Book
-    updateBook(_id: ID!, book: BookInput): Book
-    deleteBook(_id: ID!): Book
+  type Mutation {
+    createBook(input: BookInput!): Book
+    updateBook(id: ID!, input: BookInput!): Book
+    deleteBook(id: ID!): Book
   }
 `;
 
