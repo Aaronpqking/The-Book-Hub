@@ -7,9 +7,11 @@ const userSeeds = require('./usersSeeds.json');
 
 
 db.once('open', async () => {
-  await db.collection.deleteMany({});
-  await db.collection.create(bookSeeds);
-
+  await Book.Book.deleteMany({});
+  await Book.Book.create(bookSeeds);
+  await Book.User.deleteMany({});
+  await Book.User.create(userSeeds);
+  
   console.log('all done!');
   process.exit(0);
 });

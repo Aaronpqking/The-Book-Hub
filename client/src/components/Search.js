@@ -60,12 +60,7 @@ const dbName = 'the-book-hub';
             } catch (error) {
               console.log(error);
             }
-            const db = client.db(dbName);
-            const books = db.collection('books');
-
-            // Search the database
-            const searchedBooksArr = await books.find({ $text: { $search: searchInput } }).toArray();
-            setSearchedBooks(searchedBooksArr);
+            
           }
 
 
