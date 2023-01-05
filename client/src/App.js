@@ -148,6 +148,7 @@ import { ApolloClient } from '@apollo/client';
 // import { Navbar } from 'react-bootstrap';
 import AppNavbar from './components/Nav';
 import Home from './components/Home';
+import Search from './components/Search';
 import SignupForm from './components/SignupForm';
 import Login from './components/LoginForm';
 import Cart from './components/Cart';
@@ -181,7 +182,8 @@ function App() {
         <BrowserRouter>
           <AppNavbar />
           <Routes>
-        <Route   path='/' element={<Home/>} />
+            <Route path='/' element={<Home />} />
+            <Route path='/search' component={Search} />
         <Route   path = '/signup' element = {<SignupForm/>} />
         <Route   path = '/login' element = {<Login/>} />
         <Route   path = '/cart' element = {<Cart/>} />

@@ -115,6 +115,9 @@ Login
 <Nav.Link as={Link} to='/signup'>
 Sign Up
 </Nav.Link>
+<Nav.Link as={Link} to='/search'>
+Search
+</Nav.Link>       
 <Nav.Link as={Link} to='/order-summary'>
 Order Summary
 </Nav.Link>
