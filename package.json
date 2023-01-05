@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "decode": "^0.3.0",
-    "passport": "^0.6.0"
+    "passport": "^0.6.0",
+    "react-router-dom": "^6.6.1"
   }
 }

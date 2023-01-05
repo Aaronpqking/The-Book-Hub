@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Jumbotron,
-  Container,
-  Col,
-  Form,
-  Button,
-  Card,
-  CardColumns,
-} from 'react-bootstrap';
+import { Container, Col, Row, Card, CardGroup} from 'react-bootstrap';
 
 
 function Home() {
@@ -23,7 +15,41 @@ function Home() {
         </div>
       </div>
       </div>
+      <main>
+            <h2>Featured Books</h2>
+            <Container>
+              <CardGroup>
+                <Row>
+                  <Col xs={12} md={4}>
+                    <Card
+                      imageUrl="http://example.com/book1.jpg"
+                      title="Book 1"
+                      author="Author 1"
+                      price={19.99}
+                    />
+                  </Col>
+                  <Col xs={12} md={4}>
+                    <Card
+                      imageUrl="http://example.com/book2.jpg"
+                      title="Book 2"
+                      author="Author 2"
+                      price={24.99}
+                    />
+                  </Col>
+                  <Col xs={12} md={4}>
+                    <Card
+                      imageUrl="http://example.com/book3.jpg"
+                      title="Book 3"
+                      author="Author 3"
+                      price={29.99}
+                    />
+                  </Col>
+                </Row>
+              </CardGroup>
+            </Container>
+          </main>
     </div>
+    
   );
 }
 
