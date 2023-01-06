@@ -1,0 +1,67 @@
+.Home {
+    /* Add some padding to the top and bottom of the page to add some space */
+    padding: 50px 0;
+  }
+  
+  .jumbotron {
+    /* Add some margin to the bottom of the jumbotron to add some space */
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    /* Add some margin to the top of the h2 element to add some space */
+    margin-top: 25px;
+    /* Center the text */
+    text-align: center;
+  }
+  
+  .CardGroup {
+    /* Add some margin to the top and bottom of the CardGroup to add some space */
+    margin: 25px 0;
+  }
+  
+  .Card {
+    /* Add some padding to the top and bottom of the Card to add some space */
+    padding: 25px 0;
+    /* Add a border to the Card */
+    border: 1px solid #ccc;
+    /* Add some margin to the right of the Card to add some space between cards */
+    margin-right: 15px;
+  }
+  
+  .Card img {
+    /* Add some height to the image to make it bigger */
+    height: 200px;
+    /* Add some margin to the bottom of the image to add some space */
+    margin-bottom: 15px;
+  }
+  
+  .Card h3 {
+    /* Add some margin to the top of the h3 element to add some space */
+    margin-top: 15px;
+  }
+  
+  .Card p {
+    /* Add some margin to the top of the p element to add some space */
+    margin-top: 15px;
+  }
+  
+  .Card button {
+    /* Add some padding to the button to make it bigger */
+    padding: 10px 20px;
+    /* Add some margin to the top of the button to add some space */
+    margin-top: 15px;
+    /* Add a border to the button */
+    border: 1px solid #333;
+    /* Add a hover effect to the button */
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .Card button:hover {
+    /* Change the background color of the button on hover */
+    background-color: #333;
+    /* Change the text color of the button on hover */
+    color: #fff;
+  }
+  
