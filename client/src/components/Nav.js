@@ -89,44 +89,33 @@
 // };
 
 // export default AppNavbar;
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-// import '../Style/nav.css';
+import React from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "../Style/nav.css";
 
 const AppNavbar = () => {
-return (
-<Navbar bg='dark' variant='dark' expand='lg'>
-<Navbar.Brand as={Link} to='/'>
-Book Store
-</Navbar.Brand>
-{/* <Navbar.Toggle aria-controls='navbar' /> */}
-{/* <Navbar.Collapse id='navbar'> */}
-        <Nav className='ml-auto justify-content-center'>
-            
-<Nav.Link as={Link} to='/'>
-Home
-            </Nav.Link>
-            
-<Nav.Link as={Link} to='/cart'>
-Cart
-</Nav.Link>
-<Nav.Link as={Link} to='/login'>
-Login
-</Nav.Link>
-<Nav.Link as={Link} to='/signup'>
-Sign Up
-</Nav.Link>
-<Nav.Link as={Link} to='/search'>
-Search
-</Nav.Link>       
-<Nav.Link as={Link} to='/order-summary'>
-Order Summary
-</Nav.Link>
-</Nav>
-{/* </Navbar.Collapse> */}
-</Navbar>
-);
+  return (
+    <Navbar bg="dark" variant="dark" expand="lg" className="justify-content-between">
+      <Navbar.Brand as={Link} to="/">
+        Book Store
+      </Navbar.Brand>
+      <Nav className="ml-auto">
+      <Nav.Link as={Link} to="/search">
+            Search
+          </Nav.Link>
+          <Nav.Link as={Link} to="/cart">
+            Cart
+          </Nav.Link>
+          <Nav.Link as={Link} to="/login">
+            Login
+          </Nav.Link>
+          <Nav.Link as={Link} to="/signup">
+            Sign Up
+          </Nav.Link>
+      </Nav>
+    </Navbar>
+  );
 };
 
 export default AppNavbar;
