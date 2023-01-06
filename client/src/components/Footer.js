@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFolder } from "react-icons/fa";
+import "../Style/footer.css";
 
 const Footer = () => {
     return (
@@ -11,14 +12,7 @@ const Footer = () => {
                     <div className="d-lg-flex pb-4 justify-content-between">
                         <ul className="no-bullets">
                             <li><h6>Aaron King</h6></li>
-                            <li>
-                                <a className="footer-link" href="https://aaronpqking.github.io/cv">
-                                    <span className="pr-3">
-                                        <FaFolder />
-                                    </span>
-                                    https://aaronpqking.github.io/cv
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a className="footer-link" href="mailto:aaronpqking@gmail.com">
                                     <span className="pr-3">
@@ -46,14 +40,7 @@ const Footer = () => {
                         </ul>
                         <ul className="no-bullets">
                             <li><h6>Roman Sokol</h6></li>
-                            <li>
-                                <a className="footer-link" href="https://github.com/sokolroman/react-portfolio">
-                                    <span className="pr-3">
-                                        <FaFolder />
-                                    </span>
-                                    https://github.com/sokolroman/react-portfolio
-                                </a>
-                            </li>
+                            
                             <li>
                                 <a className="footer-link" href="mailto:sokolroman@proton.me">
                                     <span className="pr-3">
@@ -81,14 +68,7 @@ const Footer = () => {
                         </ul>
                         <ul className="no-bullets">
                             <li><h6>Hector Perez</h6></li>
-                            <li>
-                                <a className="footer-link" href="https://">
-                                    <span className="pr-3">
-                                        <FaFolder />
-                                    </span>
-                                    https://vanessalane.herokuapp.com
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a className="footer-link" href="mailto:hperez.oh@gmail.com">
                                     <span className="pr-3">
