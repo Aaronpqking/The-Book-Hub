@@ -25,7 +25,7 @@ Welcome to the Library App! This app allows users to view and purchase books. It
 Insert screenshot here
 
 ## Deployment
-The Library App is deployed on Heroku and can be accessed at the following link: [Insert link here]
+The Library App is deployed on Heroku and can be accessed at the following link: [Heroku](https://book-hub-store-project.herokuapp.com)
 
 ## Quality Coding Standards
 The repository for the Library App follows best practices for file structure, naming conventions, class and id naming conventions, indentation, and commenting.
