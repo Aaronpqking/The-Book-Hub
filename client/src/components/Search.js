@@ -201,7 +201,7 @@ const SearchBar = () => {
 
   // const handleChange = (event) => {
   //   setSearchTerm(event.target.value);
-  };
+
   const handleChange = (event) => {
     setSearchTerm((prevSearchTerm) => event.target.value);
   };
@@ -230,7 +230,7 @@ const SearchBar = () => {
       setError(searchError);
       setLoading(false);
     }
-  }, [searchError]);
+  }, [searchError])
 
   return (
     <div>
