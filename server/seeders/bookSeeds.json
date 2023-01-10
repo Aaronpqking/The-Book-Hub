@@ -1,27 +1,27 @@
 [
-    {
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "publisher": "T. Egerton"
-    },
-    {
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "publisher": "Charles Scribner\"s Sons"
-    },
-    {
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "publisher": "J. B. Lippincott & Co."
-    },
-    {
-      "title": "The Alchemist",
-      "author": "Paulo Coelho",
-      "publisher": "HarperCollins"
-    },
-    {
-      "title": "The Catcher in the Rye",
-      "author": "J. D. Salinger",
-      "publisher": "Little, Brown and Company"
-    }
-  ]
+  {
+    "title": "Pride and Prejudice",
+    "authors": "Jane Austen",
+    "publisher": "T. Egerton"
+  },
+  {
+    "title": "The Great Gatsby",
+    "authors": "F. Scott Fitzgerald",
+    "publisher": "Charles Scribner\"s Sons"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "authors": "Harper Lee",
+    "publisher": "J. B. Lippincott & Co."
+  },
+  {
+    "title": "The Alchemist",
+    "authors": "Paulo Coelho",
+    "publisher": "HarperCollins"
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "authors": "J. D. Salinger",
+    "publisher": "Little, Brown and Company"
+  }
+]
