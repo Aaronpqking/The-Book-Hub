@@ -20,21 +20,24 @@ const SignupForm = () => {
 //tie hook and mutationtogether under new variable name
   const [addUser, { error }] = useMutation(ADD_USER);
 
-  useEffect(() => {
-    if (error) {
-      setShowAlert(true);
-    } else {
-      setShowAlert(false);
-    }
-  }, [error]);
+//   useEffect(() => {
+//     if (error) {
+//       setShowAlert(true);
+//     } else {
+//       setShowAlert(false);
+//     }
+//   }, [error]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    console.log(value);
     setUserFormData({ ...userFormData, [name]: value });
+    // console.log("test")
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log('testing')
 
     // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
@@ -45,13 +48,19 @@ const SignupForm = () => {
 
     try {
       //use form input variables as values in mutation
-      const { data } = await addUser({
-        variables: { ...userFormData },
+      const { data } = await addUser({        
+        variables: { ...userFormData }
+        
       });
       console.log(data);
+      if(data){
+        console.log("succeess")
+    };
+
       Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
+      setShowAlert(true);
     }
 
     setUserFormData({
