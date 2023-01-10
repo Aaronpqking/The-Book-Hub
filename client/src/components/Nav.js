@@ -106,7 +106,8 @@ const AppNavbar = () => {
   src={logo}
   alt="Logo"
 />
-</Navbar.Brand>
+      </Navbar.Brand>
+      
       <Nav className="ml-auto">
       <Nav.Link as={Link} to="/search">
             Search

@@ -3,40 +3,9 @@ const User = require('../models/user');
 
 const resolvers = {
     Query: {
-        // search: async (parent, { searchTerm }) => {
-        //     try {
-        //       return Book.find({
-        //         $text: {
-        //           $search: searchTerm
-        //         }
-        //       });
-        //     } catch (error) {
-        //       console.error("almost!");
-        //     }
-        //   },
-        // search: async (parent, { searchTerm }, callback) => {
-        //     try {
-        //         await Book.findOne({ title }).exec();
-        //     } catch (error) {
-        //       return callback(error, null);
-        //     }
-        //   },
         search: async (parent, { searchTerm }) => {
-            Book.find({ title: searchTerm }).exec(function (error, books) {
-                if (books) {
-                    return books;
-                } else {
-                    console.log(error);
-                    return undefined;
-                }
-            });
-
+            return Book.find({ title: searchTerm });
         },
-
-
-
-
-
         books: async () => {
             return Book.find();
         },
@@ -62,6 +31,5 @@ const resolvers = {
         },
     },
 };
-
 
 module.exports = resolvers;
