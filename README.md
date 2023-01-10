@@ -26,7 +26,7 @@ Insert screenshot here
 
 ## Deployment
 The Library App is deployed on Heroku and can be accessed at the following link: [Heroku](https://book-hub-store-project.herokuapp.com)
-
+https://lit-harbor-08223.herokuapp.com/
 ## Quality Coding Standards
 The repository for the Library App follows best practices for file structure, naming conventions, class and id naming conventions, indentation, and commenting.
 
