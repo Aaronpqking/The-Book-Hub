@@ -201,22 +201,24 @@ const SearchBar = () => {
 
   // const handleChange = (event) => {
   //   setSearchTerm(event.target.value);
-  };
+
   const handleChange = (event) => {
-    setSearchTerm((prevSearchTerm) => event.target.value);
+
+    setSearchTerm(event.target.value);
   };
-  
-  const handleSearch = () => {
+
+  const handleSearch = (event) => {
+    event.preventDefault();
     console.log('HP');
+    console.log(searchTerm)
     setLoading(true);
     setError(null);
 
     executeSearch({ variables: { searchTerm } });
-    console.log(searchTerm);
   };
 
   useEffect(() => {
-    // console.log(data);
+    console.log('Search Use Effect')
     if (data) {
       console.log(data);
       setResults(data.search);
@@ -241,17 +243,8 @@ const SearchBar = () => {
         placeholder="Search..."
       />
       <button onClick={handleSearch}>Search</button>
-      {/* {loading && <p>Searching...</p>}
-      {error && <p>Error: Try Again</p>} */}
-      {results.length > 0 ? (
-        <ul>
-          {results.map((item) => (
-            <li key={item._id}>{item.title}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>No results</p>
-      )}
+
+      <p>No results</p>
     </div>
   );
 };

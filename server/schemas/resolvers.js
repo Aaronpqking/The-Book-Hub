@@ -21,48 +21,46 @@ const resolvers = {
         //       return callback(error, null);
         //     }
         //   },
-        search: async (parent, { title }) => {
-            // try {
-            //   const book = await Book.findOne({ title });
-            //   if (!book) {
-            //     throw new Error(`Book with title "${title}" not found.`);
-            //   }
-            //   return book;
-            // } catch (error) {
-            //   console.error(error);
-            //   return error;
-            // }
-            const book = await Book.findOne({ title });
-          },
-          
-    
-          
-          
-    
-books: async () => {
-return Book.find();
-},
-book: async (parent, { bookId }) => {
-    return Book.findOne({ bookId:bookId});
-},
-users: async () => {
-return User.find();
-},
-user: async (parent, { userId }) => {
-return User.findOne({ _id: userId });
-},
-},
-Mutation: {
-addBook: async (parent, { title, author, description, image }) => {
-return Book.create({ title, author, description, image });
-},
-addUser: async (parent, { username, password, email }) => {
-return User.create({ username, password, email });
-},
-removeBook: async (parent, { bookId }) => {
-return Book.findOneAndDelete({ _id: bookId });
-},
-},
+        search: async (parent, { searchTerm }) => {
+            Book.find({ title: searchTerm }).exec(function (error, books) {
+                if (books) {
+                    return books;
+                } else {
+                    console.log(error);
+                    return undefined;
+                }
+            });
+
+        },
+
+
+
+
+
+        books: async () => {
+            return Book.find();
+        },
+        book: async (parent, { bookId }) => {
+            return Book.findOne({ bookId: bookId });
+        },
+        users: async () => {
+            return User.find();
+        },
+        user: async (parent, { userId }) => {
+            return User.findOne({ _id: userId });
+        },
+    },
+    Mutation: {
+        addBook: async (parent, { title, author, description, image }) => {
+            return Book.create({ title, author, description, image });
+        },
+        addUser: async (parent, { username, password, email }) => {
+            return User.create({ username, password, email });
+        },
+        removeBook: async (parent, { bookId }) => {
+            return Book.findOneAndDelete({ _id: bookId });
+        },
+    },
 };
 
 
