@@ -4,7 +4,7 @@ export const SEARCH_QUERY = gql`
 query SearchQuery($searchTerm: String!) {
   search(searchTerm: $searchTerm) {
     title
-    authors
+    author
   }
 }
 `;

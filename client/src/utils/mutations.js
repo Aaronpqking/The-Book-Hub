@@ -52,7 +52,7 @@ export const SAVE_BOOK = gql`
       savedBooks {
         id
         title
-        authors
+        author
       }
     }
   }

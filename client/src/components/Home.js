@@ -7,7 +7,7 @@ function Home() {
     <div className="Home">
       <div className="jumbotron jumbotron-fluid bg-dark text-light" style={{ backgroundImage: "url(http://example.com/image.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div className="container">
-          <h1 className="display-4">Welcome to the Bookstore!</h1>
+          <h1 className="display-4 center">Welcome to the Bookstore!</h1>
           <p className="lead">
             We have a wide selection of books in all genres, including fiction, non-fiction, and children's books. Browse our featured books or use the search bar to find your next favorite read.
           </p>
